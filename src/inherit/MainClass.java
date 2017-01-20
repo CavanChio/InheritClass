@@ -1,4 +1,7 @@
 package inherit;
+
+import otherinherit.Woman;
+
 /**
  * Created by Cavan on 2017/1/19.
  */
@@ -10,10 +13,8 @@ public class MainClass {
         person.gender = "man";
 
         Man man = new Man();
-        System.out.println(man.height);
         Son son = new Son();
         System.out.println(son.add(5, 6));
-        System.out.println(son.height);
 
         /*
         * 假如有不同的包里面含有相同的类名, 如果需要同时引用的话, 就需要在类名前加入包名
@@ -25,5 +26,18 @@ public class MainClass {
         teacher2.name = "zhao";
         teacher2.calcul();
         System.out.println(teacher1.name +" "+ teacher2.name);
+
+        /*
+        * 当子类和父类不在同一个包中时, 子类只能继承父类中protected和public属性修饰词修饰的方法.
+        * private和友好访问的对象不能被子类继承
+        * */
+        Woman woman = new Woman();
+        woman.name = "li";
+        woman.gender = "woman";
+
+        boolean a = son instanceof Man;
+        boolean b = man instanceof Son;
+        System.out.println(a);
+        System.out.println(b);
     }
 }
