@@ -87,5 +87,13 @@ public class MainClass {
         Father sample = new Child();
 //        sample.method();
         System.out.println("调用的成员："+sample.gender);
+
+        /*abstract类和abstract方法
+        * 用关键字abstract修饰的类称为abstract类(抽象类)
+        * 用关键字abstract修饰的方法称为abstract方法(抽象方法)
+        * 对于abstract方法, 只允许声明, 不允许实现
+        * 不允许使用final和abstract同时修饰一个方法
+        * 如果一个非抽象类是一个抽象类的子类, 则它必须重写父类的抽象方法
+        * */
     }
 }
