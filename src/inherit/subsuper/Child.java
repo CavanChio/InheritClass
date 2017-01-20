@@ -24,6 +24,19 @@ public class Child extends Father {
 
     public int getAge() {
         System.out.println("Child getAge()");
+        //用super关键字调用被隐藏的父类的属性和方法
+        //用this关键字调用子类的属性和方法
+        super.getCount();
+        this.getCount();
         return age;
     }
+
+    public String gender = "子类属性";
+//    public String getGender() {
+//        return gender;
+//    }
+    public void method() {
+        System.out.println("这是子类的method()方法"+ this.getClass());
+    }
+
 }

@@ -5,6 +5,7 @@ package inherit.subsuper;
  */
 public class Father {
     public int count;
+    public String name;
     public Father() {
         count = 1;
         System.out.println("Father is called.");
@@ -18,4 +19,12 @@ public class Father {
         return count;
     }
 
+    public String gender = "父类属性";
+//    public String getGender() {
+//        return gender;
+//    }
+
+    public void method(){
+        System.out.println("这是父类的方法"+ this.getClass());
+    }
 }

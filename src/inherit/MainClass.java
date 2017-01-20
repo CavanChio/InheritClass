@@ -68,6 +68,9 @@ public class MainClass {
         Father is called.   // 先调用变量原始类型的构造函数
         Child is called.    // 再调用变量被创建的类型的构造函数
         子类继承父类, 属性的数据类型可以变, 方法的数据类型不能改变
+        重写时要注意:
+        1.不能降低方法的访问权限
+        2.不能更改方法的数据类型
         */
         System.out.println("c count = " + c.getCount());
         c.setCount(4); // Call setCount() of  Father class
@@ -75,5 +78,14 @@ public class MainClass {
         System.out.println("c age = " + c.getAge());
         c.setAge(30);
         System.out.println("c age = " + c.getAge());
+
+        /*向上转型
+        * getClass(), java运行时找到当前的类
+        * 在处理向上转型时, 调用的成员变量属于父类的成员变量, 方法属于子类继承或重写过来的方法
+        * 如果想要调用子类的成员变量,可以将子类的成员变量封装成getter形式的方法
+         * */
+        Father sample = new Child();
+//        sample.method();
+        System.out.println("调用的成员："+sample.gender);
     }
 }
