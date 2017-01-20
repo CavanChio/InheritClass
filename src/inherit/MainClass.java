@@ -1,5 +1,8 @@
 package inherit;
 
+import inherit.subsuper.Cat;
+import inherit.subsuper.Child;
+import inherit.subsuper.Father;
 import otherinherit.Woman;
 
 /**
@@ -39,5 +42,38 @@ public class MainClass {
         boolean b = man instanceof Son;
         System.out.println(a);
         System.out.println(b);
+
+        /*
+        * 子类声明的方法和成员变量的名字如果和从父类继承过来的名字或方法相同,
+        * 就相当于对父类的成员变量或方法的重写, 父类的就会被隐藏, 但仍可被调用
+        * 方法重写  */
+        Cat cat = new Cat();
+        cat.price = 180;
+        cat.computer(8, 9);
+
+        /*子类的继承和重写*/
+        Father f1 = new Father();
+        System.out.println("f1 count = "+ f1.getCount());
+        f1.setCount(3);
+        System.out.println("f1 count = "+ f1.getCount());
+
+        Father f2 = new Father();
+        System.out.println("f2 count = " + f2.getCount());
+        f2.setCount(5);
+        System.out.println("f2 count = " + f2.getCount());
+        System.out.println("****************************");
+
+        Child c = new Child();
+        /*
+        Father is called.   // 先调用变量原始类型的构造函数
+        Child is called.    // 再调用变量被创建的类型的构造函数
+        子类继承父类, 属性的数据类型可以变, 方法的数据类型不能改变
+        */
+        System.out.println("c count = " + c.getCount());
+        c.setCount(4); // Call setCount() of  Father class
+        System.out.println("c count = " + c.getCount());
+        System.out.println("c age = " + c.getAge());
+        c.setAge(30);
+        System.out.println("c age = " + c.getAge());
     }
 }
