@@ -1,5 +1,9 @@
 package inherit;
 
+import inherit.objectmethod.Circle;
+import inherit.objectmethod.Geometry;
+import inherit.objectmethod.Pillar;
+import inherit.objectmethod.Rectangle;
 import inherit.subsuper.Cat;
 import inherit.subsuper.Child;
 import inherit.subsuper.Father;
@@ -95,5 +99,15 @@ public class MainClass {
         * 不允许使用final和abstract同时修饰一个方法
         * 如果一个非抽象类是一个抽象类的子类, 则它必须重写父类的抽象方法
         * */
+
+        //面向抽象编程
+        Pillar pillar;
+        Geometry bottom;
+        bottom = new Rectangle(12, 22);
+        pillar = new Pillar(bottom, 58);
+        System.out.println("矩形底的柱体的体积"+pillar.getVolume());
+        bottom = new Circle(10);
+        pillar = new Pillar(bottom, 58);
+        System.out.println("圆形底的柱体的体积"+pillar.getVolume());
     }
 }

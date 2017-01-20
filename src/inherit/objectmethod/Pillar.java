@@ -6,7 +6,7 @@ package inherit.objectmethod;
 public class Pillar {
     Geometry bottom;//抽象类声明的对象
     double height;
-    Pillar(Geometry bottom, double height) {
+    public Pillar(Geometry bottom, double height) {
         this.bottom = bottom;
         this.height = height;
     }

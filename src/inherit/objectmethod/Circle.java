@@ -5,7 +5,7 @@ package inherit.objectmethod;
  */
 public class Circle extends Geometry {
     double r;
-    Circle(double r) {
+    public Circle(double r) {
         this.r = r;
     }
     public double getArea() {
